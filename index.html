@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>워크메이트 솔루션 - 고객 대기실</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.win.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --bg-color: #f4f7f6;
+            --container-bg: #ffffff;
+            --text-main: #333333;
+            --border-color: #eeeeee;
+        }
+        body {
+            font-family: "Pretendard", sans-serif;
+            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            margin: 0; padding: 20px;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+        }
+        .container {
+            width: 100%; max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px; padding: 40px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        h1 { color: var(--primary-color); margin-bottom: 10px; }
+        p { color: #666; line-height: 1.6; }
+        .menu-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;
+        }
+        .menu-item {
+            padding: 20px; background: white; border-radius: 15px;
+            text-decoration: none; color: var(--text-main); font-weight: bold;
+            border: 1px solid var(--border-color); transition: 0.3s;
+        }
+        .menu-item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>워크메이트 솔루션 고객 대기실입니다.<br>잠시만 기다려 주시면 담당자가 안내해 드리겠습니다.</p>
+        
+        <div class="menu-grid">
+            <a href="/logo" class="menu-item">🎨 로고 디자인 견적</a>
+            <a href="/card" class="menu-item">📇 명함 디자인 견적</a>
+        </div>
+    </div>
+</body>
+</html>
