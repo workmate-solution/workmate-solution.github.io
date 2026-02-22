@@ -3,55 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>워크메이트 솔루션 - 결제 완료</title>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.win.css">
+    <title>WM Solution | 대기실</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <style>
+        :root {
+            --bg: #050505; --card: #111; --accent: #00ffcc; --text-main: #ffffff; --text-sub: #888;
+        }
         body {
-            font-family: "Pretendard", sans-serif;
-            background-color: #f4f7f9;
-            margin: 0; padding: 0;
-            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+            background-color: var(--bg); color: var(--text-main); font-family: "Pretendard", sans-serif;
+            margin: 0; line-height: 1.6;
         }
-        .container {
-            background: white; border-radius: 16px; padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            max-width: 480px; width: 90%; text-align: center;
+        .container { max-width: 800px; margin: 0 auto; padding: 80px 20px; }
+        
+        /* 헤더 스타일 */
+        header { text-align: center; margin-bottom: 80px; }
+        .logo-text { font-size: 1.2rem; font-weight: 800; letter-spacing: 4px; color: var(--accent); margin-bottom: 20px; }
+        h1 { font-size: 2.5rem; font-weight: 900; margin: 0; word-break: keep-all; }
+        .welcome-msg { color: var(--text-sub); margin-top: 20px; font-size: 1.1rem; }
+
+        /* 작업 절차 섹션 */
+        .process-container { position: relative; margin-top: 60px; }
+        .process-item {
+            background: var(--card); border: 1px solid #222; padding: 30px; border-radius: 20px;
+            margin-bottom: 20px; position: relative; transition: 0.3s;
         }
-        .icon { font-size: 50px; margin-bottom: 20px; }
-        h1 { font-size: 24px; color: #1a1a1a; margin-bottom: 15px; letter-spacing: -0.5px; }
-        p { color: #555; line-height: 1.6; font-size: 16px; margin-bottom: 30px; }
-        .guide-box {
-            background: #f8f9fa; border-radius: 10px; padding: 20px;
-            text-align: left; margin-bottom: 30px;
+        .process-item:hover { border-color: var(--accent); transform: scale(1.02); }
+        .step-num { font-size: 0.8rem; color: var(--accent); font-weight: 900; margin-bottom: 10px; opacity: 0.7; }
+        .process-item h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+        .process-item p { margin: 0; color: var(--text-sub); font-size: 1rem; }
+
+        /* 액션 버튼 */
+        .cta-group { margin-top: 60px; display: grid; gap: 15px; }
+        .btn {
+            display: block; padding: 20px; text-align: center; border-radius: 15px;
+            font-weight: 800; text-decoration: none; font-size: 1.1rem; transition: 0.3s;
         }
-        .guide-title { font-weight: 700; color: #333; display: block; margin-bottom: 10px; font-size: 14px; }
-        .guide-list { margin: 0; padding: 0; list-style: none; font-size: 14px; color: #666; }
-        .guide-list li { margin-bottom: 8px; position: relative; padding-left: 15px; }
-        .guide-list li::before { content: "•"; position: absolute; left: 0; color: #007bff; }
-        .btn-contact {
-            display: block; background: #007bff; color: white;
-            padding: 18px; border-radius: 10px; text-decoration: none;
-            font-weight: 700; font-size: 16px; transition: 0.2s;
-        }
-        .btn-contact:hover { background: #0056b3; }
+        .btn-primary { background: var(--accent); color: #000; }
+        .btn-secondary { background: #222; color: #fff; border: 1px solid #333; }
+        .btn:hover { opacity: 0.8; }
+
+        footer { text-align: center; margin-top: 100px; color: #444; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="icon">🚀</div>
-        <h1>워크메이트 솔루션 신청 완료</h1>
-        <p>사장님의 소중한 주문이 정상 접수되었습니다.<br>전문 엔지니어가 세팅 후 즉시 연락드리겠습니다.</p>
-        
-        <div class="guide-box">
-            <span class="guide-title">⚙️ 향후 진행 절차 안내</span>
-            <ul class="guide-list">
-                <li>결제 확인 및 솔루션 라이선스 발급</li>
-                <li>환경 설정 및 시스템 구축 (영업일 기준 24시간 이내)</li>
-                <li>최종 세팅 완료 안내 및 사용 가이드 전달</li>
-            </ul>
+
+<div class="container">
+    <header>
+        <div class="logo-text">WM SOLUTION</div>
+        <h1>최고의 결과물을 위해<br>잠시만 대기해 주세요.</h1>
+        <p class="welcome-msg">워크메이트 솔루션을 선택해 주셔서 감사합니다.<br>대표님의 비즈니스에 가장 날카로운 디자인을 입혀드립니다.</p>
+    </header>
+
+    <div class="process-container">
+        <div class="process-item">
+            <div class="step-num">STEP 01</div>
+            <h3>기획안 작성 및 데이터 전달</h3>
+            <p>원하시는 스타일과 필수 포함 내용을 설문지에 담아주세요. 구체적일수록 결과물이 완벽해집니다.</p>
         </div>
 
-        <a href="https://pf.kakao.com/_xxxx" class="btn-contact">기술 지원팀 실시간 문의하기</a>
+        <div class="process-item">
+            <div class="step-num">STEP 02</div>
+            <h3>디자인 시안 작업</h3>
+            <p>전달받은 데이터를 바탕으로 전문가가 직접 시안 작업을 진행합니다. (영업일 기준 2~3일 소요)</p>
+        </div>
+
+        <div class="process-item">
+            <div class="step-num">STEP 03</div>
+            <h3>피드백 및 수정</h3>
+            <p>시안 확인 후 대표님의 의견을 반영하여 정밀하게 다듬는 과정을 거칩니다.</p>
+        </div>
+
+        <div class="process-item">
+            <div class="step-num">STEP 04</div>
+            <h3>최종본 전달 및 확정</h3>
+            <p>모든 수정이 완료된 최종 데이터를 고화질 파일로 안전하게 전달해 드립니다.</p>
+        </div>
     </div>
+
+    <div class="cta-group">
+        <a href="#" class="btn btn-primary">지금 기획안 작성하기 (필수)</a>
+        <a href="https://open.kakao.com/o/대표님링크" class="btn btn-secondary">담당 디자이너와 실시간 채팅</a>
+    </div>
+
+    <footer>
+        &copy; 2026 WM Solution. All Rights Reserved.
+    </footer>
+</div>
+
 </body>
 </html>
